@@ -7,9 +7,9 @@ searchCorpora = (fs.readFileSync process.argv[2]).toString()
 isPalindrome = (x) -> if x.length > 1 then x == rev.reverse x else false
 
 largestPalindrome = (xs) ->
-    for ln in [xs.length..1]
+    for ln in [xs.length..2]
         for x in [0..(xs.length-ln)]
-            if isPalindrome xs[x...(ln+x)] then return xs[x...(ln+x)]
-
+            candidate = xs[x...(ln+x)]	
+            if isPalindrome candidate then return candidate
 
 log largestPalindrome searchCorpora
