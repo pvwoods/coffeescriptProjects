@@ -7,7 +7,7 @@ permute = (str) ->
       permutations.push prefix + obj
     else
       for i in [0...obj.length]
-        _p prefix + (obj.charAt i), (obj.substr 0, i) + (obj.substr i + 1, obj.length), permutations
+        _p prefix + obj[i], (obj.substr 0, i) + (obj.substr i + 1, obj.length), permutations
   ) "", str, _s
   
   return _s
