@@ -4,7 +4,7 @@ permute = (str) ->
 
   (_p = (prefix, obj, permutations) ->
     if obj.length == 0
-      permutations.push prefix + obj
+      permutations.push prefix
     else
       for i in [0...obj.length]
         _p prefix + obj[i], (obj.substr 0, i) + (obj.substr i + 1, obj.length), permutations
